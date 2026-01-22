@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Saima 🎈</title>
+
+  <!-- Google Fonts for stylish header -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffe4ec; /* pastel pink */
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+
+    /* Header with stylish font */
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #a1006d; /* dark pink */
+      font-family: 'Pacifico', cursive;
+      font-size: 48px;
+      text-shadow: 2px 2px #ffc0dd; /* subtle embroidered effect */
+    }
+
+    /* Decorative embroidery corners */
+    .embroidery {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 3px solid #a1006d;
+      border-radius: 50%;
+      top: 20px;
+      left: 20px;
+      box-shadow: inset 0 0 8px #ffb3c6;
+    }
+
+    .embroidery.right {
+      right: 20px;
+      left: auto;
+    }
+
+    .balloon {
+      width: 80px;
+      height: 105px;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      animation: float 6s infinite ease-in-out;
+      box-shadow: inset -8px -12px rgba(255,255,255,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .balloon:hover {
+      transform: scale(1.1);
+    }
+
+    .balloon::after {
+      content: '';
+      width: 2px;
+      height: 45px;
+      background: #9d8189;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0); }
+    }
+
+    .message {
+      position: fixed;
+      bottom: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 22px 30px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      font-size: 16px;
+      color: #4a4a4a;
+      max-width: 85%;
+      text-align: center;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .final {
+      font-size: 22px;
+      color: #a1006d;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Happy Birthday Saima 🎂💗</h1>
+
+<!-- Embroidery decorations -->
+<div class="embroidery"></div>
+<div class="embroidery right"></div>
+
+<div class="message" id="messageBox"></div>
+
+<script>
+  const wishes = [
+    "Happy Birthday Saima 💗✨<br>To the girl who proves that books, intelligence, and kindness are a kind of magic all on their own. May this year reward your curiosity and courage.",
+    "Another year older, another year wiser — and yes, being clever is something to be proud of. Never dim that brilliance 📚💫",
+    "On your birthday, remember: bravery isn’t always loud. Sometimes it looks like standing by what’s right, even when it’s hard. You do that beautifully 🪄",
+    "May this year be filled with learning, growth, and friendships that feel like home. You’re doing better than you think 🤍",
+    "Happy Birthday to a girl whose curiosity changes everything. May you never stop asking questions or trusting your instincts 🔍✨",
+    "Another year of being thoughtful, brave, and quietly powerful. The world needs girls like you — the ones who seek truth 💭🤍",
+    "On your birthday, I hope you remember that being gentle doesn’t mean being weak. Your persistence is your superpower 🌙",
+    "May this year bring clarity, confidence, and the courage to keep going — even when answers aren’t easy 🎂✨"
+  ];
+
+  const balloonColors = [
+    "radial-gradient(circle at 30% 30%, #fff, #ffb3c6)",
+    "radial-gradient(circle at 30% 30%, #fff, #ffc8dd)",
+    "radial-gradient(circle at 30% 30%, #fff, #e0aaff)",
+    "radial-gradient(circle at 30% 30%, #fff, #cdb4db)",
+    "radial-gradient(circle at 30% 30%, #fff, #f1c0e8)"
+  ];
+
+  const totalBalloons = wishes.length;
+  let currentIndex = 0;
+
+  function createBalloons() {
+    for (let i = 0; i < totalBalloons; i++) {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = 10 + i * 10 + "vw"; 
+      balloon.style.top = 40 + Math.random() * 20 + "vh"; 
+      balloon.style.background =
+        balloonColors[Math.floor(Math.random() * balloonColors.length)];
+
+      balloon.onclick = () => {
+        if (currentIndex < wishes.length) {
+          showNextMessage();
+          balloon.remove();
+        }
+      };
+
+      document.body.appendChild(balloon);
+    }
+  }
+
+  function showNextMessage() {
+    const box = document.getElementById("messageBox");
+    box.style.display = "block";
+
+    if (currentIndex < wishes.length) {
+      box.innerHTML = wishes[currentIndex];
+      currentIndex++;
+
+      if (currentIndex === wishes.length) {
+        setTimeout(() => {
+          box.innerHTML =
+            "<span class='final'>Happy Birthday Saima 🎉💗<br>You popped all the balloons 🎈</span>";
+        }, 3500);
+      }
+    }
+  }
+
+  createBalloons();
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Saima 🎈</title>
+
+  <!-- Google Fonts for stylish header -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffe4ec; /* pastel pink */
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+
+    /* Header with stylish font */
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #a1006d; /* dark pink */
+      font-family: 'Pacifico', cursive;
+      font-size: 48px;
+      text-shadow: 2px 2px #ffc0dd; /* subtle embroidered effect */
+    }
+
+    /* Decorative embroidery corners */
+    .embroidery {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 3px solid #a1006d;
+      border-radius: 50%;
+      top: 20px;
+      left: 20px;
+      box-shadow: inset 0 0 8px #ffb3c6;
+    }
+
+    .embroidery.right {
+      right: 20px;
+      left: auto;
+    }
+
+    .balloon {
+      width: 80px;
+      height: 105px;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      animation: float 6s infinite ease-in-out;
+      box-shadow: inset -8px -12px rgba(255,255,255,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .balloon:hover {
+      transform: scale(1.1);
+    }
+
+    .balloon::after {
+      content: '';
+      width: 2px;
+      height: 45px;
+      background: #9d8189;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0); }
+    }
+
+    .message {
+      position: fixed;
+      bottom: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 22px 30px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      font-size: 16px;
+      color: #4a4a4a;
+      max-width: 85%;
+      text-align: center;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .final {
+      font-size: 22px;
+      color: #a1006d;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Happy Birthday Saima 🎂💗</h1>
+
+<!-- Embroidery decorations -->
+<div class="embroidery"></div>
+<div class="embroidery right"></div>
+
+<div class="message" id="messageBox"></div>
+
+<script>
+  const wishes = [
+    "Happy Birthday Saima 💗✨<br>To the girl who proves that books, intelligence, and kindness are a kind of magic all on their own. May this year reward your curiosity and courage.",
+    "Another year older, another year wiser — and yes, being clever is something to be proud of. Never dim that brilliance 📚💫",
+    "On your birthday, remember: bravery isn’t always loud. Sometimes it looks like standing by what’s right, even when it’s hard. You do that beautifully 🪄",
+    "May this year be filled with learning, growth, and friendships that feel like home. You’re doing better than you think 🤍",
+    "Happy Birthday to a girl whose curiosity changes everything. May you never stop asking questions or trusting your instincts 🔍✨",
+    "Another year of being thoughtful, brave, and quietly powerful. The world needs girls like you — the ones who seek truth 💭🤍",
+    "On your birthday, I hope you remember that being gentle doesn’t mean being weak. Your persistence is your superpower 🌙",
+    "May this year bring clarity, confidence, and the courage to keep going — even when answers aren’t easy 🎂✨"
+  ];
+
+  const balloonColors = [
+    "radial-gradient(circle at 30% 30%, #fff, #ffb3c6)",
+    "radial-gradient(circle at 30% 30%, #fff, #ffc8dd)",
+    "radial-gradient(circle at 30% 30%, #fff, #e0aaff)",
+    "radial-gradient(circle at 30% 30%, #fff, #cdb4db)",
+    "radial-gradient(circle at 30% 30%, #fff, #f1c0e8)"
+  ];
+
+  const totalBalloons = wishes.length;
+  let currentIndex = 0;
+
+  function createBalloons() {
+    for (let i = 0; i < totalBalloons; i++) {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = 10 + i * 10 + "vw"; 
+      balloon.style.top = 40 + Math.random() * 20 + "vh"; 
+      balloon.style.background =
+        balloonColors[Math.floor(Math.random() * balloonColors.length)];
+
+      balloon.onclick = () => {
+        if (currentIndex < wishes.length) {
+          showNextMessage();
+          balloon.remove();
+        }
+      };
+
+      document.body.appendChild(balloon);
+    }
+  }
+
+  function showNextMessage() {
+    const box = document.getElementById("messageBox");
+    box.style.display = "block";
+
+    if (currentIndex < wishes.length) {
+      box.innerHTML = wishes[currentIndex];
+      currentIndex++;
+
+      if (currentIndex === wishes.length) {
+        setTimeout(() => {
+          box.innerHTML =
+            "<span class='final'>Happy Birthday Saima 🎉💗<br>You popped all the balloons 🎈</span>";
+        }, 3500);
+      }
+    }
+  }
+
+  createBalloons();
+</script>
+
+</body>
+</html>
