@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Happy Birthday Saima 🎈</title>
 
   <!-- Google Fonts for stylish header -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -17,17 +17,19 @@
       position: relative;
     }
 
-    /* Header with stylish font */
+    /* Header */
     h1 {
       text-align: center;
       margin-top: 30px;
-      color: #a1006d; /* dark pink */
+      color: #a1006d;
       font-family: 'Pacifico', cursive;
       font-size: 52px;
-      text-shadow: 2px 2px #ffc0dd; /* subtle embroidered effect */
+      text-shadow: 2px 2px #ffc0dd;
+      z-index: 1000;
+      position: relative;
     }
 
-    /* Decorative embroidery corners */
+    /* Embroidery corners */
     .embroidery {
       position: absolute;
       width: 70px;
@@ -37,6 +39,7 @@
       top: 20px;
       left: 20px;
       box-shadow: inset 0 0 10px #ffb3c6;
+      z-index: 900;
     }
 
     .embroidery.right {
@@ -44,9 +47,10 @@
       left: auto;
     }
 
+    /* Balloons */
     .balloon {
-      width: 120px;
-      height: 150px;
+      width: 130px;
+      height: 160px;
       border-radius: 50%;
       position: absolute;
       cursor: pointer;
@@ -76,26 +80,27 @@
       100% { transform: translateY(0); }
     }
 
+    /* Message box */
     .message {
-      position: fixed;
-      bottom: 40px;
+      position: absolute;
+      top: 150px; /* below header */
       left: 50%;
       transform: translateX(-50%);
       background: white;
-      padding: 28px 35px;
-      border-radius: 22px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-      font-size: 18px;
+      padding: 35px 40px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      font-size: 20px;
       color: #4a4a4a;
-      max-width: 85%;
+      max-width: 70%;
       text-align: center;
       display: none;
-      line-height: 1.6;
-      z-index: 1000; /* messages on top */
+      line-height: 1.7;
+      z-index: 1000; /* always on top of balloons */
     }
 
     .final {
-      font-size: 26px;
+      font-size: 28px;
       color: #a1006d;
       font-weight: 600;
     }
@@ -104,9 +109,7 @@
 
 <body>
 
-<h1>Happy Birthday Saima 🎂💗</h1>
 
-<!-- Embroidery decorations -->
 <div class="embroidery"></div>
 <div class="embroidery right"></div>
 
@@ -139,9 +142,9 @@
       const balloon = document.createElement("div");
       balloon.className = "balloon";
 
-      // Clustered floating positions
-      balloon.style.left = 15 + Math.random() * 70 + "vw";
-      balloon.style.top = 30 + Math.random() * 50 + "vh";
+      // Clustered positions
+      balloon.style.left = 10 + Math.random() * 75 + "vw";
+      balloon.style.top = 100 + Math.random() * 200 - 50 + "px"; // slightly below header
 
       balloon.style.background =
         balloonColors[Math.floor(Math.random() * balloonColors.length)];
