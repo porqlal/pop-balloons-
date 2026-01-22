@@ -1,0 +1,17 @@
+.message {
+  position: fixed;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 22px 30px;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  font-size: 16px;
+  color: #4a4a4a;
+  max-width: 85%;
+  text-align: center;
+  display: none;
+  line-height: 1.5;
+  z-index: 999; /* added so messages are always on top */
+}
